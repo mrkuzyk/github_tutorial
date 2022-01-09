@@ -1,16 +1,23 @@
-function filterArray(numbers, value) {
+function getEvenNumbers(start, end) {
    // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+let evenNumber = [];
 
-  // Change code above this line
+for (let i = start; i <= end; i+=1){
+  if ((i) % 2 ===0){
+    evenNumber.push(i);
+  }
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+return evenNumber;
+
+    // Change code above this line
+  }
+
+  console.log(getEvenNumbers(2, 5));
+  console.log(getEvenNumbers(3, 11));
+  console.log(getEvenNumbers(6, 12));
+  console.log(getEvenNumbers(8, 8));
+  console.log(getEvenNumbers(7, 7));
+
+
+//   функція приймає два числа: початок і кінец. Вона перевіряє кожне число від старт +1 на те чи є воно парне. якщо це число парне, то воно добавляється в новий лет і повертається!
