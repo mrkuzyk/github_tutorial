@@ -1,16 +1,24 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+function findNumber(start, end, divisor) {
+  // Change code below this line
+  let number;
 
+  for (let i = start; i < end; i += 1) {
+    if (i % divisor === 0) {
+      return i;
+//    break;
+    }
+    }
+    // return number;
   // Change code above this line
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+console.log(findNumber(2, 6, 5));
+console.log(findNumber(8, 17, 3));
+console.log(findNumber(6, 9, 4));
+console.log(findNumber(16, 35, 7));
+
+
+// функція приймає три числа і перевіря від "старт" до "енд".
+// далі шукає число яке ділиться на "дівісор" без залишку і повертає його
+
+// ми відмовилися від брейка і ретурна бо знайшли коротший варіант
