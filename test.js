@@ -1,16 +1,15 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const start = 6;
+const end = 27;
+let number;
 
-  // Change code above this line
+for (let i = start; i < end; i += 1) {
+  if (i % 5 === 0) {
+    number = i;
+    break;
+  }
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+// Внас є початок і кінець. 
+// функція шукає перше число, яке ділиться на 5 без 
+// залишку(10 в прикладі буде).Це число присвоюється змінній лет, 
+// після чого ми брейком перериваємо функцію, щоб дурно не рахувала.
