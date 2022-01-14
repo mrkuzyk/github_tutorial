@@ -1,16 +1,30 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
 
-  // Change code above this line
+function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
+
+for (product of products){
+  if (product.name === productName){
+  return product.price * product.quantity
+  }
+}
+return 0
+
+  // Пиши код выше этой строки
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+console.log(calculateTotalPrice("Blaster"));
+console.log(calculateTotalPrice("Radar"));
+console.log(calculateTotalPrice("Droid"));
+console.log(calculateTotalPrice("Grip"));
+console.log(calculateTotalPrice("Scanner"));
+
+
+// функція приймає назву "нейм" і порівнює чи є таке ім'я в масиві.
+// Якщо є, то повертається результат множення ціни на кількість. В іншому
+// разі повертається 0. 
