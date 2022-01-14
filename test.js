@@ -1,16 +1,20 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const colors = [
+  { hex: "#f44336", rgb: "244,67,54" },
+  { hex: "#2196f3", rgb: "33,150,243" },
+  { hex: "#4caf50", rgb: "76,175,80" },
+  { hex: "#ffeb3b", rgb: "255,235,59" },
+];
 
-  // Change code above this line
+const hexColors = [];
+const rgbColors = [];
+// Change code below this line
+
+for (color of colors){
+  hexColors.push(color.hex);
+  rgbColors.push(color.rgb);
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+console.log(hexColors);
+console.log(rgbColors);
+
+// перебрази масив і забрали параметри через "."
