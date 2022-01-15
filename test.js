@@ -1,16 +1,19 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const values = [];
+// Change code below this line
+const keys = Object.keys(apartment);
 
-  // Change code above this line
+console.log(keys);
+
+for (const key of keys){
+    values.push(apartment[key]);
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+console.log(values);
+
+
+// перебрали об'єкт через "обжект.кейс()"
