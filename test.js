@@ -1,16 +1,27 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function getProductPrice(productName) {
+  // Change code below this line
+for (product of products){
+  if (product.name === productName){
+    return product.price;
+  } 
+}
+return null
 
   // Change code above this line
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+console.log(getProductPrice("Radar"));
+console.log(getProductPrice("Grip"));
+console.log(getProductPrice("Scanner"));
+console.log(getProductPrice("Droid"));
+console.log(getProductPrice("Engine"));
+
+// функція шукає продукт за ім'ям і вертає ціну того продукта.
+// а коли немає, то вертає null
