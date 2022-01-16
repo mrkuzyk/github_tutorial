@@ -1,16 +1,12 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const scores = [89, 64, 42, 17, 93, 51, 26];
+// Change code below this line
 
-  // Change code above this line
-}
+// const bestScore = scores;
+// const worstScore = scores;
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+const bestScore = Math.max(...scores);
+const worstScore = Math.min(...scores);
+
+
+// розпилюємо масив чисел через "...спред" і визначаємо математичний 
+// максимум і мінімум
