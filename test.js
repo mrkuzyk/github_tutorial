@@ -1,16 +1,26 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
 
+const newObject = { category: "General", priority: "Normal", ...data, completed: false};
+    
+    return newObject
+    
   // Change code above this line
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+
+console.log(makeTask({}));
+console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
+console.log(makeTask({ category: "Finance", text: "Take interest" }));
+console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
+console.log(makeTask({ text: "Buy bread" }));
+
+
+// у нас є об'єкт. Ми створюємо новий для того, щоб не змінювати
+// старий напряму. ТОму внього ми закидаємо всі параметри з старого,
+// а також додаємо "спред на з старої вункції, бо там вставляються нові дані"
+// Відповідно якщо нові дані будуть такіж то перезапишуть старі, в іншому
+// разі будуть дані по замовчуванню. 
