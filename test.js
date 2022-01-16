@@ -1,16 +1,22 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const defaultSettings = {
+  theme: "light",
+  public: true,
+  withPassword: false,
+  minNumberOfQuestions: 10,
+  timePerQuestion: 60,
+};
+const overrideSettings = {
+  public: false,
+  withPassword: true,
+  timePerQuestion: 30,
+};
+// Change code below this line
+const finalSettings = { ...defaultSettings, ...overrideSettings };
 
-  // Change code above this line
-}
+console.log(finalSettings)
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+
+// розпилення налаштувань тесту і накладання один на одного.
+// Так, як перший тест є стандартний і по ньому робиться другий, то
+// при розпиленні з накладанням ми його ставим першим і на нього 
+// наклааємо другий. Тоді зміни перезаписують стандартні значення.
