@@ -1,16 +1,19 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
-
-  // Change code above this line
+function deliverPizza(pizzaName) {
+  return `Delivering ${pizzaName} pizza.`;
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+function makePizza(pizzaName) {
+  return `Pizza ${pizzaName} is being prepared, please wait...`;
+}
+
+// Chande code below this line
+function makeMessage(pizzaName, callback) {
+  return callback(pizzaName);
+}
+
+
+console.log(makeMessage("Royal Grand", makePizza));
+console.log(makeMessage("Ultracheese", deliverPizza));
+
+
+// функція приймає два значення і в залежності від "колбек" вертає результат
