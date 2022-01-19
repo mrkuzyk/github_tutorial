@@ -1,16 +1,16 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change below this line
 
-  // Change code above this line
-}
+const anyElementInFirstIsEven = firstArray.some(value => value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(value => value % 2 === 1);
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+const anyElementInSecondIsEven = secondArray.some(value => value % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some(value => value % 2 === 1);
+
+const anyElementInThirdIsEven = thirdArray.some(value => value % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 === 1);
+
+
+// перевірка чи хоч якийсь елемен є парний (в верхніх) і непарний (нижні)
