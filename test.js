@@ -1,16 +1,30 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["adventure", "history"],
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    genres: ["fiction", "mysticism"],
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    genres: ["horror", "mysticism", "adventure"],
+  },
+];
+// Change code below this line
+// const allGenres = books;
+// const uniqueGenres = allGenres;
 
-  // Change code above this line
-}
+const allGenres = books.flatMap(book => book.genres);
+const uniqueGenres = allGenres.filter((book, index, array) => array.indexOf(book) === index);
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+// в "аллЖанр" ми отримали розгладжені всі жанри з повторами.
+// в "юнікю" ми отримали унікальні жанри. "аррайІндексОф" шукає перше
+// співпадіння і отримує йогоіндекс. В параметрі індекс зберігається
+// індекс теперішнього елемента "бук" при переборі через "фільтер"
+
+// якщо результат "індексОф" і значеня "індекс" рівні то це унікальний елемент
