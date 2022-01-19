@@ -1,16 +1,14 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+// Change code below this line
 
-  // Change code above this line
-}
+const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+
+// сортування по алфавіту і ні
