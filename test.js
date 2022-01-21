@@ -1,16 +1,14 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+];
+// Change code below this line
 
-  // Change code above this line
-}
+const ascendingReleaseDates = [...releaseDates].sort();
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+const alphabeticalAuthors = [...authors].sort();
+
+// сортуємо в алфавітному порядку 
