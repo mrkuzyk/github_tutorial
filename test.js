@@ -1,16 +1,24 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
-
+const historyService = {
+  orders: [
+    { email: "jacob@hotmail.com", dish: "Burrito" },
+    { email: "solomon@topmail.net", dish: "Burger" },
+    { email: "artemis@coldmail.net", dish: "Pizza" },
+    { email: "solomon@topmail.net", dish: "Apple pie" },
+    { email: "jacob@hotmail.com", dish: "Taco" },
+  ],
+  // Change code below this line
+  getOrdersLog() {
+    return this.orders
+      .map(order => `email: ${order.email} dish: ${order.dish}`)
+      .join(" - ");
+  },
+  getEmails() {
+    const emails = this.orders.map(order => order.email);
+    const uniqueEmails = new Set(emails);
+    return [...uniqueEmails];
+  },
+  getOrdersByEmail(email) {
+    return this.orders.filter(order => order.email === email);
+  },
   // Change code above this line
-}
-
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+};
