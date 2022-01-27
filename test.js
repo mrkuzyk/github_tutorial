@@ -1,16 +1,43 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
 
-  // Change code above this line
+class StringBuilder{
+
+    constructor (initialValue){
+        this.value = initialValue;
+    }
+
+    getValue(){
+        return this.value;
+    }    
+
+    padEnd(str) {
+        this.value += str;
+    }
+
+    padStart(str){
+        this.value = str + this.value;
+    }
+
+    padBoth(str){
+        this.value = str + this.value + str;
+
+    }
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+
+
+// Створено клас "стрінгБілдер"
+// Клас приймає один параметр "інітіалВелю", який ми записали в об'єкт
+// "велю" і створили 4 методи класу:
+// 1 - повертає значення "велю"
+// 2 - отримує "стр" і добавляє в кінець
+// 3 - отрмує "стр" і добавляє на початок
+// 4 - отримує "стр" і добавляє з двох боків
