@@ -1,16 +1,33 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
-    }
-    return bigNumber;
+class Car {
+  // Change code below this line
+ static MAX_PRICE = 50000;
+  
+  #price;
 
+  constructor({ price }) {
+    this.#price = price;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    if (newPrice <= Car.MAX_PRICE){
+    this.#price = newPrice;}
+  }
   // Change code above this line
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+const audi = new Car({ price: 35000 });
+console.log(audi.price); // 35000
+
+audi.price = 49000;
+console.log(audi.price); // 49000
+
+audi.price = 51000;
+console.log(audi.price); // 49000
+
+
+// добавили статичне значення (яке видно тільки в цьому класі)
+// добавили в "сетері" перевірку на максимальну ціну
