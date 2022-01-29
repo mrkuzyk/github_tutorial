@@ -1,16 +1,24 @@
-function filterArray(numbers, value) {
-   // Change code below this line
-let bigNumber = [];
-    for (let i = 0; i < numbers.length; i += 1){
-        if (numbers[i] > value) {
-            bigNumber.push(numbers[i]);
-        }
+class Car {
+  static #MAX_PRICE = 50000;
+  // Change code below this line
+  static checkPrice(price){
+    if (price > this.#MAX_PRICE){
+      return "Error! Price exceeds the maximum";
     }
-    return bigNumber;
-
+    return "Success! Price is within acceptable limits"
+  }
   // Change code above this line
+  constructor({ price }) {
+    this.price = price;
+  }
 }
 
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+const audi = new Car({ price: 36000 });
+const bmw = new Car({ price: 64000 });
+
+console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+
+// добавили "кар" публічний статичний метод "чекПрайс", який приймає ціну
+// а потім добавили перевірку на цю ціну і вивід повідомлення
